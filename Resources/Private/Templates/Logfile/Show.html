@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+<f:section name="Content">
+    <a name="top"></a>
+    <h1>
+        <f:translate key="LLL:EXT:logfile_viewer/Resources/Private/Language/locallang_mod.xlf:logfile"/>
+        {filename}
+
+        <f:link.action action="show" arguments="{filename: '{filename}'}" class="btn btn-default btn-sm" title="{f:translate(key: 'LLL:EXT:logfile_viewer/Resources/Private/Language/locallang_mod.xlf:reload')}">
+            <span class="t3js-icon icon icon-size-small icon-state-default icon-actions-refresh">
+                <span class="icon-markup">
+                    <img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/actions/actions-refresh.svg" width="16"
+                         height="16">
+                </span>
+            </span>
+        </f:link.action>
+        <a href="#end" class="btn btn-default btn-sm" title="{f:translate(key: 'LLL:EXT:logfile_viewer/Resources/Private/Language/locallang_mod.xlf:to_bottom')}">
+            <span class="t3js-icon icon icon-size-small icon-state-default icon-actions-arrow-down">
+                <span class="icon-markup">
+                    <img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/actions/actions-arrow-down.svg" width="16"
+                         height="16">
+                </span>
+            </span>
+        </a>
+    </h1>
+
+    <f:for each="{lines}" as="line">
+        <p>{line}</p>
+    </f:for>
+
+    <a name="end"></a>
+    <f:link.action action="show" arguments="{filename: '{filename}'}" class="btn btn-default btn-sm" title="{f:translate(key: 'LLL:EXT:logfile_viewer/Resources/Private/Language/locallang_mod.xlf:reload')}">
+        <span class="t3js-icon icon icon-size-small icon-state-default icon-actions-refresh">
+            <span class="icon-markup">
+                <img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/actions/actions-refresh.svg" width="16"
+                     height="16">
+            </span>
+        </span>
+    </f:link.action>
+    <a href="#top" class="btn btn-default btn-sm" title="{f:translate(key: 'LLL:EXT:logfile_viewer/Resources/Private/Language/locallang_mod.xlf:to_top')}">
+        <span class="t3js-icon icon icon-size-small icon-state-default icon-actions-arrow-up">
+            <span class="icon-markup">
+                <img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/actions/actions-arrow-up.svg" width="16"
+                     height="16">
+            </span>
+        </span>
+    </a>
+</f:section>
+
+</html>
